@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --defaultWhiteColor: #ffffff;
+    --darkGrey: #262626;
+    --grey: #656565;
+    --greySecondary: #D9D9D9;
+    --greyTertiary: #B1B1B1;
+    --blue: #337EF3;
+    --purple: #8802DD;
+    --darkPurple: #8901E1;
+    --pink: #F93E99;
+    --black: #0D0D0D;
+    --lightGreen: #52BD84;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Style the scrollbar track */
+  ::-webkit-scrollbar-track {
+    background-color:var(--purple);
+  }
+
+  /* Style the scrollbar thumb */
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--pink);
+    border-radius: 2px;
+  }
+
+  /* Set the width of the scrollbar */
+  ::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+  }
+
+  body {
+    background: var(--black);
+    color: var(--defaultWhiteColor);
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    @apply text-title36;
+  }
+
+  h2 {
+    @apply text-title24;
+  }
+
+  h3 {
+    @apply text-title20;
+  }
+
+  h4 {
+    @apply text-description;
+  }
+}
+
+@layer components {
+  .logo_ {
+    @apply h-[60px] md:h-[80px] !important;
+  }
+
+  .titleLarge {
+    @apply text-title24 md:text-title30 font-Poppins;
+  }
+
+  .titleMedium {
+    @apply text-title20 md:text-title24 text-White font-semibold font-Poppins;
+  }
+
+  .titleSmall {
+    @apply text-descriptionSmall md:text-title20 text-White font-semibold font-Poppins;
+  }
+
+  .paragraph {
+    @apply text-para md:text-description text-White font-Poppins;
+  }
+
+  .paragraphSmall {
+    @apply text-para md:text-descriptionSmall text-White font-Poppins;
+  }
+  .description {
+    @apply text-para text-White font-Poppins;
+  }
+  .table_row_data{
+    @apply font-bold text-White truncate w-52 capitalize
+  }
+
+  .custom-container {
+    @apply w-95 m-auto;
+  }
+
+  .gradient-button {
+    @apply bg-custom-gradient text-White text-para h-10 font-bold;
+  }
+
+  .gradient-button:hover {
+    @apply bg-gradient-to-r from-DarkPurple to-Purple border-none !important;
+  }
+
+  .common-button {
+    @apply h-14 w-full md:w-64 font-semibold text-para md:text-description font-Poppins;
+  }
+
+  .outline-button {
+    @apply rounded-lg p-[2px] bg-custom-gradient;
+  }
+
+  .auth-form {
+    @apply bg-DarkGrey rounded-20 w-full md:w-650;
+  }
+
+  .auth-main-div {
+    @apply py-5 px-2 md:px-0;
+  }
+
+  .form_container {
+    @apply w-full md:w-450 m-auto;
+  }
+
+  .input-box {
+    @apply h-12 bg-Black rounded-10 border-none font-Poppins text-White caret-White;
+  }
+
+  .input-box::placeholder {
+    @apply text-White bg-Black;
+  }
+  .rangePicker{
+    @apply w-450
+  }
+  .input-box .ant-picker-input input::placeholder {
+    @apply text-White;
+}
+
+  .eye_off {
+    @apply h-5
+  }
+
+  .side_menu_tab {
+    @apply font-semibold font-Poppins rounded-none !important
+  }
+
+  .active {
+    @apply text-Pink font-semibold text-description;
+  }
+
+  .un_active {
+    @apply text-White font-semibold text-description;
+  }
+  .about_content_tags{
+    @apply flex items-center justify-center gap-2 bg-Black rounded-10 p-3 md:min-w-40
+  }
+}
+
+/* select  */
+.ant-select-dropdown .ant-select-item {
+  @apply p-2 font-bold
+}
+
+.ant-select-selector {
+  @apply text-White !important
+}
+.ant-select-single.ant-select-open .ant-select-selection-item {
+  @apply text-White !important
+}
+
+/* select end */
+/* select input */
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus {
+  @apply bg-Black
+}
+
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus-within {
+  @apply bg-Black
+}
+
+.ant-input-affix-wrapper>input.ant-input {
+  @apply text-White font-Poppins;
+}
+
+.ant-input-affix-wrapper>input.ant-input::placeholder {
+  @apply text-White text-para;
+}
+
+.ant-input-outlined:focus {
+  @apply border-2 border-inputBorder shadow-none;
+}
+
+.ant-input-outlined:hover {
+  @apply border-2 border-inputBorder;
+}
+
+.ant-input-outlined:focus-within {
+  @apply border-2 border-inputBorder bg-Black;
+}
+
+.ant-input-outlined:hover {
+  @apply border-none bg-Black
+}
+
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
+  @apply border-none bg-Black
+}
+
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover {
+  @apply bg-Black
+}
+/* input end */
+.ant-form-item .ant-form-item-explain-error {
+  @apply text-left
+}
+
+.form_container .ant-image .ant-image-img {
+  @apply h-5
+}
+.ant-image .ant-image-img{
+  @apply w-auto
+}
+
+.ant-menu-inline .ant-menu-item {
+  @apply m-0
+}
+
+.ant-popover .ant-popover-inner {
+  @apply p-0 rounded-10 bg-Black
+}
+/* PAGINATION */
+.ant-pagination-item-active {
+  @apply rounded-full bg-White text-Black border-none min-w-10 h-10 text-descriptionSmall !important
+}
+.ant-pagination .ant-pagination-item {
+  @apply text-descriptionSmall bg-DarkGrey text-White leading-10
+}
+ul.ant-pagination.ant-table-pagination.ant-table-pagination-right{
+  @apply my-0 p-10 bg-DarkGrey
+}
+
+.custom_table .ant-select-selector{
+  @apply border-2 border-Purple text-descriptionSmall !important
+}
+.custom_table .ant-select-dropdown .ant-select-item{
+  @apply text-para !important
+}
+.ant-select-single {
+  @apply h-11
+}
+.otp_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.otp_input_container {
+  margin-top: 0rem !important;
+  margin: 0.8rem;
+  padding: 1rem;
+  width: 58px !important;
+  height: 50px !important;
+  font-size: 2rem;
+  color: var(--defaultWhiteColor);
+  border: none !important;
+  border-color: none !important;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 13px;
+  background-color: var(--black);
+}

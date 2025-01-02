@@ -1,0 +1,19 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - 'npm cache clean --force'
+        - 'rm -rf node_modules package-lock.json'
+        - 'npm i --cache .npm --prefer-offline'
+    build:
+      commands:
+        - 'export NODE_OPTIONS=--max_old_space_size=12288' # Allocate 12GB memory
+        - 'npm run build:dev'
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - '.npm/**/*'
