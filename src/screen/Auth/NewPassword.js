@@ -6,8 +6,8 @@ import CustomToast from '../../utils/CustomToast'
 import { useDynamicMutationMutation } from '../../redux/service/apiSlice'
 import * as AntdComponents from 'antd'
 import { STATIC_IMAGES } from '../../utils/StaticImages'
-import OutlineButton from '../../components/OutlineButton'
 import { useSelector } from 'react-redux'
+import CustomButton from '../../components/CustomButton'
 const NewPassword = () => {
     const email = useSelector((state) => state?.auth?.email)
     console.log('emailemail',email);
@@ -69,7 +69,7 @@ const NewPassword = () => {
                         </AntdComponents.Form.Item>
 
                         <div className="mt-14 mb-8">
-                            <OutlineButton className={'bg-DarkGrey'} isLoading={isLoading} htmlType='submit' title='Create new password' />
+                            <CustomButton className={'bg-Blue'} isLoading={isLoading} htmlType='submit' title='Create new password' />
                         </div>
                     </AntdComponents.Form>
                 </div>

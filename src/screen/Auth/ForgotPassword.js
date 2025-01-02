@@ -7,7 +7,7 @@ import { Endpoints } from '../../utils/Endpoints'
 import CustomToast from '../../utils/CustomToast'
 import { EmailStore } from '../../redux/slices/authSlice'
 import { useDynamicMutationMutation } from '../../redux/service/apiSlice'
-import OutlineButton from '../../components/OutlineButton'
+import CustomButton from '../../components/CustomButton'
 const ForgotPassword = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -54,7 +54,7 @@ const ForgotPassword = () => {
                             <AntdComponents.Input className='input-box' placeholder='Email' />
                         </AntdComponents.Form.Item>
                         <div className="my-14">
-                            <OutlineButton className={'bg-DarkGrey'} isLoading={loading} htmlType='submit'  title='Send OTP' />
+                            <CustomButton className={'bg-Blue'} isLoading={loading} htmlType='submit'  title='Send OTP' />
                         </div>
                     </AntdComponents.Form>
                 </div>

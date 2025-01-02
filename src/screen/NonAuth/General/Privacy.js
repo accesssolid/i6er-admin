@@ -3,12 +3,12 @@ import JoditEditor from "jodit-react"
 import { RouterKeys } from '../../../Routes/RouterKeys'
 import * as AntdComponents from 'antd'
 import { Link } from 'react-router-dom'
-import OutlineButton from '../../../components/OutlineButton'
 import { useDynamicMutationMutation, useDynamicQueryQuery } from '../../../redux/service/apiSlice'
 import { Endpoints } from '../../../utils/Endpoints'
 import { QueryKeys } from '../../../utils/RTKKeys'
 import CustomToast from '../../../utils/CustomToast'
 import Loader from '../../../components/Loader'
+import CustomButton from '../../../components/CustomButton'
 
 
 const buttons = [
@@ -69,7 +69,7 @@ const config = {
 
 const Privacy = () => {
     const breadcrumbItems = [
-        { title: <Link className='un_active text-White' to={RouterKeys.NON_Auth.HOME} >Home</Link> },
+        { title: <Link className='un_active text-Red' to={RouterKeys.NON_Auth.HOME} >Home</Link> },
         { title: <AntdComponents.Typography className='active'>Privacy policy</AntdComponents.Typography> }
     ];
     const [updateMutation, { isLoading: statusUpdateLoading }] = useDynamicMutationMutation();
@@ -82,8 +82,9 @@ const Privacy = () => {
         endpoint: Endpoints.NON_AUTH.COMMON_CONTENT,
         params: {},
         key: QueryKeys.COMMON_CONTENT,
-        skip: false,
-    })
+    },
+    {skip:false,refetchOnMountOrArgChange:true}
+)
     let allData = data?.data
 
     useEffect(() => {
@@ -123,10 +124,10 @@ const Privacy = () => {
     };
     return (
         <div>
-            <div className="flex w-full justify-between items-center mt-4 md:0">
+            <div className="flex flex-col md:flex-row w-full justify-between md:items-center mt-4 md:0">
                 <AntdComponents.Breadcrumb items={breadcrumbItems} separator={<h4 className='text-White'>/</h4>} />
-                <div className="">
-                    <OutlineButton isLoading={statusUpdateLoading} className={'bg-Black'} title={'Update'} onClick={() => updateFunc()} />
+                <div className="mt-3 md:mt-0">
+                    <CustomButton isLoading={statusUpdateLoading} className={'bg-Blue w-2/3 md:w-60'} title={'Update'} onClick={() => updateFunc()} />
                 </div>
             </div>
             <div className="mt-4 bg-DarkGrey p-5 rounded-10">

@@ -35,7 +35,7 @@ const DebouncedSearch = ({ onSearch, delay, placeholder, style, className }) => 
             value={searchTerm}
             onChange={handleChange}
             allowClear
-            className={`h-10 bg-Black rounded-none border-none w-full md:w-60`}
+            className={`h-11 bg-Black w-full md:w-60`}
             prefix={<ReactIcons.SearchIcon className={'text-White'} />}
         />
     );

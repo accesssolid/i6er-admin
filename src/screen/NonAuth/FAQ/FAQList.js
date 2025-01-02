@@ -2,10 +2,8 @@ import React from 'react'
 import * as AntdComponents from 'antd'
 import { RouterKeys } from '../../../Routes/RouterKeys';
 import { Link } from 'react-router-dom';
-import OutlineButton from '../../../components/OutlineButton';
 import CustomButton from '../../../components/CustomButton';
 import { ReactIcons } from '../../../utils/ReactIcons';
-import MultiColorDiv from '../../../components/MultiColorDiv';
 import { useDynamicMutationMutation, useDynamicQueryQuery } from '../../../redux/service/apiSlice';
 import Loader from '../../../components/Loader';
 import { Endpoints } from '../../../utils/Endpoints';
@@ -16,7 +14,7 @@ import { userStatus } from '../../../utils/Constant';
 
 const FAQList = () => {
     const breadcrumbItems = [
-        { title: <Link className='un_active text-White' to={RouterKeys.NON_Auth.HOME} >Home</Link> },
+        { title: <Link className='un_active text-Red' to={RouterKeys.NON_Auth.HOME} >Home</Link> },
         { title: <AntdComponents.Typography className='active'>FAQ</AntdComponents.Typography> }
     ];
     const [editDetail, setEditDetail] = React.useState({})
@@ -29,8 +27,8 @@ const FAQList = () => {
         endpoint: Endpoints.NON_AUTH.FAQ_LIST,
         params: {},
         key: QueryKeys.FAQ_LIST,
-        skip: false,
-    })
+    },{skip:false,refetchOnMountOrArgChange:true}
+)
     let mainData = Array.isArray(data?.data) ? data?.data : []
     React.useEffect(() => {
         if (editDetail?.question != '') {
@@ -102,20 +100,20 @@ const FAQList = () => {
         }
         handleStatusUpdate(payload, 'delete')
     }
-    const handleSwitch = (value, id) => {
-        let status = value ? userStatus.ACTIVE : userStatus.DEACTIVATED
-        let payload = {
-            question_id: id,
-            status: status
-        }
-        handleStatusUpdate(payload, 'delete')
-    }
+    //     const handleSwitch = (value, id) => {
+    //         let status = value ? userStatus.ACTIVE : userStatus.DEACTIVATED
+    //         let payload = {
+    //             question_id: id,
+    //             status: status
+    //         }
+    //         handleStatusUpdate(payload, 'delete')
+    //    } 
     return (
         <div>
             <AntdComponents.Breadcrumb items={breadcrumbItems} separator={<h4 className='text-White'>/</h4>} />
-            <div className="flex w-full justify-end mt-4 md:0">
+            <div className="flex w-full justify-start md:justify-end mt-4 md:0">
                 <div className="">
-                    <OutlineButton className={'bg-Black'} title={'Add New'} onClick={() => { setOpenModal(true); setEditDetail({}) }} />
+                    <CustomButton className={'bg-Blue'} title={'Add New'} onClick={() => { setOpenModal(true); setEditDetail({}) }} />
                 </div>
             </div>
             <div className="mt-5">
@@ -135,7 +133,7 @@ const FAQList = () => {
                                                             <AntdComponents.Typography className='description font-semibold min-w-11'>Q {index + 1}.</AntdComponents.Typography>
                                                             <div className="flex items-stretch justify-between w-full">
                                                                 <AntdComponents.Typography className='description font-semibold'>{item?.question}?</AntdComponents.Typography>
-                                                                <AntdComponents.Switch checked={item?.status == 1 ? true : false} onChange={(value) => handleSwitch(value, item?._id)} />
+                                                                {/* <AntdComponents.Switch checked={item?.status == 1 ? true : false} onChange={(value) => handleSwitch(value, item?._id)} /> */}
                                                             </div>
                                                         </div>
                                                         {/* answer */}
@@ -145,10 +143,8 @@ const FAQList = () => {
                                                             </AntdComponents.Typography>
                                                         </div>
                                                         <div className="flex items-center gap-4 mt-5 ms-10">
-                                                            <div className="">
-                                                                <MultiColorDiv component={<AntdComponents.Button className='bg-Black border-none text-White common-button h-[2.9rem] w-28' onClick={() => { setEditDetail(item); setOpenModal(true) }}>Edit</AntdComponents.Button>} />
-                                                            </div>
-                                                            <CustomButton title={'Delete'} className={'bg-Black border-2 border-White hover:border-White h-[3.2rem] w-28'} onClick={() => { setEditDetail(item); setDeleteModal(true) }} />
+                                                            <CustomButton title={'Edit'} className={'bg-Blue  h-[3.2rem] w-28'} onClick={() => { setEditDetail(item); setOpenModal(true) }} />
+                                                            <CustomButton title={'Delete'} className={'bg-Red  h-[3.2rem] w-28'} onClick={() => { setEditDetail(item); setDeleteModal(true) }} />
                                                         </div>
                                                     </div>
                                                 )
@@ -157,7 +153,7 @@ const FAQList = () => {
                                     </>
                                     :
                                     <AntdComponents.Typography className='titleMedium text-center'>No Data Found!</AntdComponents.Typography>
-                        }
+                            }
                         </>
                 }
             </div>
@@ -214,7 +210,9 @@ const FAQList = () => {
                             >
                                 <AntdComponents.Input.TextArea rows={4} className='input-box' />
                             </AntdComponents.Form.Item>
-                            <OutlineButton title={editDetail?._id ? 'Update' : 'Submit'} isLoading={buttonLoading} htmlType='submit' className={'bg-Black'} classNameDiv='my-5' />
+                            <div className="text-center">
+                                <CustomButton title={editDetail?._id ? 'Update' : 'Submit'} isLoading={buttonLoading} htmlType='submit' className={'bg-Blue'} classNameDiv='my-5' />
+                            </div>
                         </AntdComponents.Form>
                     </div>
                 </AntdComponents.Modal >

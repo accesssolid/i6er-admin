@@ -4,7 +4,7 @@ import CustomToast from '../../../utils/CustomToast'
 import { useDynamicMutationMutation } from '../../../redux/service/apiSlice'
 import * as AntdComponents from 'antd'
 import { STATIC_IMAGES } from '../../../utils/StaticImages'
-import OutlineButton from '../../../components/OutlineButton'
+import CustomButton from '../../../components/CustomButton'
 
 const ChangePassword = () => {
     const [form] = AntdComponents.Form.useForm()
@@ -73,7 +73,7 @@ const ChangePassword = () => {
                         </AntdComponents.Form.Item>
 
                         <div className="mt-14 mb-3">
-                            <OutlineButton className={'bg-DarkGrey'} isLoading={isLoading} htmlType='submit' title='Save' />
+                            <CustomButton className={'bg-Blue'} isLoading={isLoading} htmlType='submit' title='Save' />
                         </div>
                     </AntdComponents.Form>
                 </div>

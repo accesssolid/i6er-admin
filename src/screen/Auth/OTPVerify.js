@@ -6,8 +6,8 @@ import { useDynamicMutationMutation } from "../../redux/service/apiSlice"
 import { Endpoints } from "../../utils/Endpoints"
 import CustomToast from "../../utils/CustomToast"
 import { useNavigate } from 'react-router-dom';
-import OutlineButton from '../../components/OutlineButton';
 import { RouterKeys } from '../../Routes/RouterKeys'
+import CustomButton from '../../components/CustomButton'
 
 const OTPVerify = () => {
   const [triggerDocumentUpload, { isLoading: verifyLoading }] = useDynamicMutationMutation();
@@ -81,11 +81,11 @@ const OTPVerify = () => {
                 resendOtp();
               }
             }} >
-              <AntdComponents.Typography className='text-Pink font-bold'>Resend</AntdComponents.Typography>
+              <AntdComponents.Typography className='text-Red font-bold'>Resend</AntdComponents.Typography>
             </div>
           </div>
           <div className="mt-10 mb-20">
-            <OutlineButton className='bg-DarkGrey' isLoading={verifyLoading} onClick={() => handleSendOtp()} title='Verify and Continue' />
+            <CustomButton className='bg-Blue' isLoading={verifyLoading} onClick={() => handleSendOtp()} title='Verify and Continue' />
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ module.exports = {
             DarkPurple: 'var(--darkPurple)',
             Pink: 'var(--pink)',
             Black: 'var(--black)',
+            Red: 'var(--Red)',
         },
         boxShadow: {
             formShadow: '0px 10px 20px 0px rgba(0, 0, 0, 0.05)',

@@ -8,11 +8,11 @@ import { useNavigate } from 'react-router-dom'
 import { useDynamicMutationMutation } from '../../redux/service/apiSlice'
 import * as AntdComponents from 'antd'
 import { STATIC_IMAGES } from '../../utils/StaticImages'
-import OutlineButton from '../../components/OutlineButton'
 import CustomToast from '../../utils/CustomToast'
 import { Endpoints } from '../../utils/Endpoints'
 import { useDispatch } from 'react-redux'
 import { AuthData } from '../../redux/slices/authSlice'
+import CustomButton from '../../components/CustomButton'
 const Login = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -31,9 +31,7 @@ const Login = () => {
         };
 
         try {
-            const { data, error } = await loginMutation(requestData);
-            console.log('data>>',data);
-            
+            const { data, error } = await loginMutation(requestData);            
             if (data?.data?.token) {
                 CustomToast('s', data?.message);
                 dispatch(AuthData(data?.data))
@@ -80,7 +78,7 @@ const Login = () => {
                         </AntdComponents.Form.Item>
 
                         <div className="mt-14">
-                            <OutlineButton className={'bg-DarkGrey'} isLoading={isLoading} htmlType='submit' title='Login' />
+                            <CustomButton className={'bg-Blue'} isLoading={isLoading} htmlType='submit' title='Login' />
                         </div>
                     </AntdComponents.Form>
                 </div>
