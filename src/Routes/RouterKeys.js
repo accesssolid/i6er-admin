@@ -21,6 +21,7 @@ export const RouterKeys ={
         REPORT_COMMENTS_DETAIL:'/report-comments-detail',
         FAQ:'/FAQ-list',
         PRIVACY:'/privacy-policy',
+        CONTACT:'/contact',
         TERMS_CONDITION:'/terms-condition',
         CHANGE_PASSWORD:'/change-password',
     },

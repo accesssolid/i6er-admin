@@ -5,7 +5,7 @@ import { FiPlus } from "react-icons/fi";
 import { ImSortAlphaAsc, ImSortAlphaDesc, ImSortNumbericDesc, ImSortNumericAsc, ImUsers } from "react-icons/im";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoChevronBackCircle, IoCloseCircle, IoNotificationsOutline, IoSearchOutline } from "react-icons/io5";
-import { MdDashboard, MdDelete, MdPrivacyTip, MdSortByAlpha } from "react-icons/md";
+import { MdContactPhone, MdDashboard, MdDelete, MdPrivacyTip, MdSortByAlpha } from "react-icons/md";
 import { PiNoteFill } from "react-icons/pi";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { TbSort09 } from "react-icons/tb";
@@ -34,6 +34,7 @@ export const ReactIcons = {
     SIDE_BAR:{
         DASHBOARD_ICON:({ style, className }) => <MdDashboard style={{ ...style, fontSize: 25 }} className={className} />,
         USERS_ICON:({ style, className }) => <FaUsers style={{ ...style, fontSize: 25 }} className={className} />,
+        CONTACT_ICON:({ style, className }) => <MdContactPhone style={{ ...style, fontSize: 25 }} className={className} />,
         FAQ_ICON:({ style, className }) => <BsQuestionSquareFill style={{ ...style, fontSize: 25 }} className={className} />,
         PRIVACY_ICON:({ style, className }) => <MdPrivacyTip style={{ ...style, fontSize: 25 }} className={className} />,
         TERMS_ICON:({ style, className }) => <PiNoteFill style={{ ...style, fontSize: 25 }} className={className} />,

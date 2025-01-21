@@ -15,6 +15,7 @@ import FAQList from "../screen/NonAuth/FAQ/FAQList";
 import Terms from "../screen/NonAuth/General/Terms";
 import Privacy from "../screen/NonAuth/General/Privacy";
 import ChangePassword from "../screen/NonAuth/General/ChangePassword";
+import ContactList from "../screen/NonAuth/Contact/ContactList";
 // import UploadStatus from "../screen/Auth/Home/UploadStatus";
 
 export const AppRouter = [
@@ -72,6 +73,10 @@ export const AppRouter = [
             {
                 path: RouterKeys.NON_Auth.TERMS_CONDITION,
                 element: <Terms />,
+            },
+            {
+                path: RouterKeys.NON_Auth.CONTACT,
+                element: <ContactList />,
             },
             {
                 path: RouterKeys.NON_Auth.PRIVACY,

@@ -12,6 +12,7 @@ export const Endpoints = {
         DASHBOARD_DATA: `admin/user/dashboard`,
         USER_GRAPH:'/admin/dashboard/users',
         USER_LIST:'admin/user/list',
+        CONTACT_US_LIST:'admin/contactus/list',
         USER_DETAILS:'admin/user/details',
         USER_INFO_LIST:'admin/user/info/list',
         USER_STATUS_UPDATE:'admin/user/status',

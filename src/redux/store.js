@@ -1,4 +1,3 @@
-// src/app/store.js
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { apiSlice } from './service/apiSlice';
 import { authSlice } from './slices/authSlice';
@@ -10,11 +9,14 @@ const persistConfig = {
     storage,
     whitelist: ['auth']
 };
+
 const rootReducer = combineReducers({
-    [apiSlice.reducerPath]: apiSlice.reducer,
-    auth: authSlice.reducer,
+    [apiSlice.reducerPath]: apiSlice.reducer, // API Slice
+    auth: authSlice.reducer, // To store data in Redux
 })
+
 const persistedReducer = persistReducer(persistConfig, rootReducer)
+
 export const createStore=(options)=>configureStore({
     reducer:persistedReducer,
    middleware: (getDefaultMiddleware) =>
@@ -24,7 +26,7 @@ export const createStore=(options)=>configureStore({
             },
         }).concat(apiSlice.middleware),
     ...options,
-})
+});
+
 export const store = createStore();
 export const persistor = persistStore(store);
-

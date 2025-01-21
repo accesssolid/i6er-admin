@@ -1,0 +1,7 @@
+http://solidappmaker.in:5304/ 
+email -  adminie6r@yopmail.com
+pswrd - 1234
+
+*NOTE* :- NO DEV ONLY PROD
+
+BUILD :- npm run build:prod

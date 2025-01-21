@@ -8,6 +8,7 @@ export const QueryKeys = {
     COMMUNITY_LIST:'community-list',
     COMMUNITY_DETAIL:'community-detail',
     CATEGORY_LIST:'category-list',
+    CONTACT_US_LIST:'contact-us-list',
     CATEGORY_DETAIL:'category-detail',
     REPORT_USER_LIST:'report-user-list',
     REPORT_POST_LIST:'report-post-list',

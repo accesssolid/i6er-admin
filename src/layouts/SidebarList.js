@@ -15,6 +15,12 @@ export const SidebarList = [
         routes: RouterKeys.NON_Auth.USERS,
     },
     {
+        id: 'contact',
+        icon: <ReactIcons.SIDE_BAR.CONTACT_ICON/>,
+        title: "Contact",
+        routes: RouterKeys.NON_Auth.CONTACT,
+    },
+    {
         id: 'faq',
         icon: <ReactIcons.SIDE_BAR.FAQ_ICON/>,
         title: "FAQ",

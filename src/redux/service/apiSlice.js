@@ -1,31 +1,37 @@
-// src/features/api/apiSlice.js
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import {LogoutAction} from "../slices/authSlice"
+import { LogoutAction } from "../slices/authSlice"
 
 const baseUrl = process.env.REACT_APP_BASE_URL
+
+// Setting BaseURL & Header
 const baseQuery = fetchBaseQuery({
     baseUrl: baseUrl,
     prepareHeaders: (headers, { getState }) => {
         const token = getState().auth.auth_data?.token; // Assuming you have auth in your state
-        console.log("token",token);
+        console.log("token", token);
         if (token) {
             headers.set('Authorization', `Bearer ${token}`);
         }
         return headers;
     },
 });
+
+// Handling API Status
 const baseQueryWithAuth = async (args, api, extraOptions) => {
-    let result = await baseQuery(args, api, extraOptions);    
+    let result = await baseQuery(args, api, extraOptions);
     if (result.error && result.error.status === 401) {
         api.dispatch(LogoutAction());
     }
     return result;
 };
 
+// Query & Mutation Hook
 export const apiSlice = createApi({
     reducerPath: 'api',
     baseQuery: baseQueryWithAuth,
     endpoints: (builder) => ({
+
+        // Query
         dynamicQuery: builder.query({
             query: ({ endpoint, params, key, headers }) => {
                 const queryParams = new URLSearchParams(params).toString();
@@ -37,13 +43,12 @@ export const apiSlice = createApi({
             },
             providesTags: (result, error, { key }) => [key],
         }),
+
+        // Mutation
         dynamicMutation: builder.mutation({
-            query: ({ endpoint, method = 'POST', body, headers,key }) => {
-                // console.log("key@@@", key);
-                 // Default headers
-                 headers = headers || {
-                    'Content-Type': 'application/json',
-                };
+            query: ({ endpoint, method = 'POST', body, headers }) => {
+                // Default headers
+                headers = headers || { 'Content-Type': 'application/json' };
 
                 // Remove Content-Type header if body is a FormData object
                 if (body instanceof FormData) {
