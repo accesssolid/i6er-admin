@@ -1,7 +1,54 @@
 http://solidappmaker.in:5304/ 
-email -  adminie6r@yopmail.com
-pswrd - 1234
+email - admini6er@yopmail.com
+pswrd - 123456
 
-*NOTE* :- NO DEV ONLY PROD
 
-BUILD :- npm run build:prod
+BUILD :- npm run build:dev
+
+
+******************************************i6eR App************************************************
+
+						     "AWS Instance Details"
+
+	 t2.medium (Oregon_us-west-2) - 2vCPU / 4GB / 30GB 
+
+	Elastic IP Address    : 	44.231.191.44
+	
+	Access & Secret Key
+		
+		Account ID			:	874555023522
+		Console Username	:	s3user
+		Console Password	:	Admin@1077
+		Region				:	us-west-2
+		Access Key			:	AKIA4XH4KUCRL3CNTCH6
+		Secret Key			:	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
+		PEM file name 		:	i6eR.pem
+
+	Port Opened 			:   80, 443, 27017, 8080
+		API-Prod			:	3000
+		API-Dev				:	3001
+		Admin-Prod			:	5000
+		Admin-Dev			:	5001
+		Website				:	4000
+		Website-Dev			:	4001
+		
+	S3 Bucket 	 		        :	s3://i6er-prod/
+								s3://i6er-dev/
+	
+	CloudFront Info
+		Bucket 				   :   "i6er-prod"
+		Origin name 		           :    i6er-prod.s3.us-west-2.amazonaws.com
+		Distribution domain name : 	https://d1clwt64tkflwy.cloudfront.net
+		-----------------------------------------------------------------
+		Bucket 				   :   "i6er-dev"
+		Origin name 		           :    i6er-dev.s3.us-west-2.amazonaws.com
+		Distribution domain name :    https://d26942j8134h69.cloudfront.net
+		
+	MongoDB URI
+		Prod URI			: 	mongodb://i6eR_Prod:i6eRProd_1077@44.231.191.44/i6eR_Prod
+		Dev URI			: 	mongodb://i6eR_Dev:i6eRDev_1077@44.231.191.44/i6eR_Dev
+		                        
+	Jenkins Credentials
+		URL 				: 	http://44.231.191.44:8080/
+		Username 		: 	i6eR_App
+		Password 		: 	i6er_1077

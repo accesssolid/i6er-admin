@@ -38,9 +38,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run start:prod",
+    "start": "react-scripts start",
     "start:prod": "echo Starting Production Server... && env-cmd -f .env.production react-scripts start",
     "start:dev": "echo Starting Development Server... && env-cmd -f .env.development react-scripts start",
+    "build": "react-scripts build",
     "build:dev": "echo Starting Development Server... && env-cmd -f .env.development react-scripts build",
     "build:prod": "echo Starting Production Server... && env-cmd -f .env.production react-scripts build",
     "test": "react-scripts test",
