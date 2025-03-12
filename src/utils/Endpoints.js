@@ -22,4 +22,8 @@ export const Endpoints = {
         FAQ_Add_UPDATE:'admin/common/question',
         
     },
+    COMMON:{
+        COMMON_CONTENT: 'common/common_content',
+        COMMON_DELETE_ACCOUNT: 'user/auth/delete/account'
+    }
 }

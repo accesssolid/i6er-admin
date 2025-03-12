@@ -4,6 +4,9 @@ export const RouterKeys ={
         CREATE_PASSWORD:'create_password',
         FORGOT_PASSWORD:'forgot_password',
         OTP_VERIFY:'otp-verify',
+        COMMON_TERMS:'common-terms',
+        COMMON_PRIVACY:'common-privacy',
+        COMMON_DELETE_ACCOUNT:'common-delete-account',
         ACCOUNT_DELETE:'account-delete-page-mobile'
     },
     NON_Auth:{

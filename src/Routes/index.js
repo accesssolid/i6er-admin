@@ -16,7 +16,10 @@ import Terms from "../screen/NonAuth/General/Terms";
 import Privacy from "../screen/NonAuth/General/Privacy";
 import ChangePassword from "../screen/NonAuth/General/ChangePassword";
 import ContactList from "../screen/NonAuth/Contact/ContactList";
-// import UploadStatus from "../screen/Auth/Home/UploadStatus";
+
+import DeleteAccount from "../screen/Common/DeleteAccount";
+import CommonTerms from "../screen/Common/CommonTerms";
+import CommonPrivacy from "../screen/Common/CommonPrivacy";
 
 export const AppRouter = [
     // Auth Part
@@ -43,6 +46,18 @@ export const AppRouter = [
             {
                 path: RouterKeys.AUTH.CREATE_PASSWORD,
                 element: <NewPassword />,
+            },
+            {
+                path: RouterKeys.AUTH.COMMON_TERMS,
+                element: <CommonTerms />,
+            },
+            {
+                path: RouterKeys.AUTH.COMMON_DELETE_ACCOUNT,
+                element: <DeleteAccount />,
+            },
+            {
+                path: RouterKeys.AUTH.COMMON_PRIVACY,
+                element: <CommonPrivacy />,
             },
         ],
     },
