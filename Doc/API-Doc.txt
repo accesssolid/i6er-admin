@@ -1,7 +1,4 @@
-Ansh Singh 
 
 swagger - https://api.i6emergency.com/swagger/
 ApiBaseUrl - https://api.i6emergency.com/api/v1/
 cloudfronturl - https://d1clwt64tkflwy.cloudfront.net
-
-
